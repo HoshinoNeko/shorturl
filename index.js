@@ -14,10 +14,10 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 router.get('/', (req,res) => {
-    res.sendFile(__dirname + '/view')
+    res.sendFile(__dirname + '/view/')
 });
 
-router.get(':url', async (req,res) => {
+router.get('/:url', async (req,res) => {
    try {
        let url = await models.findURL(req.params.url);
        if(url !== null) {
