@@ -1,0 +1,37 @@
+{
+  "name": "shorturl",
+  "version": "0.0.1",
+  "description": "Simple link shortener on nodejs and redis",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HoshinoNeko/shorturl.git"
+  },
+  "keywords": [
+    "linkshortener",
+    "nodejs",
+    "express",
+    "urlshortener",
+    "urlshortner",
+    "shortlink",
+    "shorturl"
+  ],
+  "author": "HoshinoNeko",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/HoshinoNeko/shorturl/issues"
+  },
+  "homepage": "https://github.com/HoshinoNeko/shorturl#readme",
+  "dependencies": {
+    "axios": "^1.2.2",
+    "body-parser": "^1.20.1",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "redis": "^4.5.1",
+    "shortid": "^2.2.16",
+    "valid-url": "^1.0.9"
+  }
+}

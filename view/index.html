@@ -1,0 +1,77 @@
+<html lang="EN">
+<head>
+  <title>ShortURL</title>
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">-->
+  <link rel="stylesheet" href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'>
+  <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js'></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <style>
+    .container {
+      width: 80%;
+      height: 80%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+    }
+    .row {
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+      margin-bottom: 10px;
+    }
+    .form-control {
+      width: 80%;
+
+    }
+    .button {
+      margin: 0 0 0 10px;
+    }
+    @media (max-width:768px) {
+      .container {
+        width: 95%;
+      }
+      .form-control {
+        width: 100%;
+        margin-top: 10px;
+      }
+      .button {
+        margin: 10px 0 0 0;
+      }
+    }
+  </style>
+  <script type="text/javascript">
+    let submit = () => {
+      let url = document.getElementById("url").value;
+      console.log(url)
+      if (!url) {
+        alert("Please set the url")
+        console.log("No URL given")
+      } else {
+        try {
+          axios.post('/api/short', `url: ${url}`).then(res => {
+            alert('Short URL: ' + res)
+          })
+        } catch (e) {
+          alert('error occurred')
+          console.log(e)
+        }
+      }
+    }
+  </script>
+</head>
+<body>
+<div class="container">
+  <div class='row'>
+    <h1 style='color: black'>ShortURL</h1>
+  </div>
+  <div class='row'>
+    <label for='url'></label><input type='text' class="form-control" id='url'>
+    <input type='button' value='Generate' class="btn btn-primary button" onclick="submit()">
+  </div>
+</div>
+</body>
+
+</html>
