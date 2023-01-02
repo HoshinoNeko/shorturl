@@ -36,7 +36,7 @@ const storeURL = (url) => {
     })
 };
 
-const findURL = (url) => {
+const findURL = (key) => {
     return new Promise((resolve, reject) => {
         redis.get(key, (err,reply) => {
             if (err) {
