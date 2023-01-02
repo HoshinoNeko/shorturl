@@ -32,7 +32,7 @@ router.get('/:url', async (req,res) => {
    }
 });
 
-router.post('api/short', async (req,res) => {
+router.post('/api/short', async (req,res) => {
    try {
        let hash = await models.storeURL(req.body.url);
        res.send(req.hostname + '/' + hash);
